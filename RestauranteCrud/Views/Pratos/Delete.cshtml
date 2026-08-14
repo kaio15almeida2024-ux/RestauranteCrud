@@ -1,0 +1,52 @@
+﻿@model RestauranteCrud.Models.Pratos
+
+@{
+    ViewData["Title"] = "Excluir Prato";
+}
+
+<div class="crud-card">
+
+    <div class="crud-header">
+        <h1 class="delete-title">🗑️ Excluir Prato</h1>
+        <p>Confirmação de exclusão</p>
+    </div>
+
+    <div class="delete-warning">
+        <strong>Atenção!</strong>
+        Você realmente deseja excluir este prato?
+    </div>
+
+    <div class="info-list">
+
+        <div class="info-item">
+            <span class="info-label">Nome:</span>
+            <span class="info-value">@Model.NomePrato</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Categoria:</span>
+            <span class="info-value">@Model.Categoria</span>
+        </div>
+
+        <div class="info-item">
+            <span class="info-label">Preço:</span>
+            <span class="info-value">@Model.Preco.ToString("C")</span>
+        </div>
+
+    </div>
+
+    <form asp-action="Delete" class="crud-buttons">
+
+        <input type="hidden" asp-for="IdPrato" />
+
+        <a asp-action="Index" class="btn-crud btn-voltar">
+            ← Cancelar
+        </a>
+
+        <button type="submit" class="btn-crud btn-excluir">
+            🗑️ Confirmar Exclusão
+        </button>
+
+    </form>
+
+</div>

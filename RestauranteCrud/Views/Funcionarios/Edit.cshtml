@@ -1,0 +1,60 @@
+﻿@model RestauranteCrud.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Editar Funcionário";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>✏️ Editar Funcionário</h1>
+            <p>Atualize os dados do funcionário</p>
+        </div>
+
+        <form asp-action="Edit">
+
+            <input type="hidden" asp-for="IdFuncionario" />
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="NomeFuncionario" class="form-label">Nome</label>
+                    <input asp-for="NomeFuncionario" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CPF" class="form-label">CPF</label>
+                    <input asp-for="CPF" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Cargo" class="form-label">Cargo</label>
+                    <input asp-for="Cargo" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Telefone" class="form-label">Telefone</label>
+                    <input asp-for="Telefone" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Salario" class="form-label">Salário</label>
+                    <input asp-for="Salario" type="number" step="0.01" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Endereco" class="form-label">Endereço</label>
+                    <input asp-for="Endereco" class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+                <button type="submit" class="btn-crud btn-salvar">💾 Salvar Alterações</button>
+            </div>
+
+        </form>
+    </div>
+</div>

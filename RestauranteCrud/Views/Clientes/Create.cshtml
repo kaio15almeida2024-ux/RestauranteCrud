@@ -1,0 +1,65 @@
+﻿@model RestauranteCrud.Models.Cliente
+
+@{
+    ViewData["Title"] = "Novo Cliente";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>👤 Novo Cliente</h1>
+            <p>Cadastre um novo cliente</p>
+        </div>
+
+        <form asp-action="Create">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="NomeCliente" class="form-label">Nome do Cliente</label>
+                    <input asp-for="NomeCliente" class="form-control" />
+                    <span asp-validation-for="NomeCliente" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CPF" class="form-label">CPF</label>
+                    <input asp-for="CPF" class="form-control" />
+                    <span asp-validation-for="CPF" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Telefone" class="form-label">Telefone</label>
+                    <input asp-for="Telefone" class="form-control" />
+                    <span asp-validation-for="Telefone" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email" class="form-label">E-mail</label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label asp-for="Endereco" class="form-label">Endereço</label>
+                    <input asp-for="Endereco" class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+                <button type="submit" class="btn-crud btn-salvar">💾 Cadastrar Cliente</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

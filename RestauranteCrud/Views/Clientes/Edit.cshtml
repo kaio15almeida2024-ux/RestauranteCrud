@@ -1,0 +1,57 @@
+﻿@model RestauranteCrud.Models.Cliente
+
+@{
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>✏️ Editar Cliente</h1>
+            <p>Atualize os dados do cliente</p>
+        </div>
+
+        <form asp-action="Edit">
+
+            <input type="hidden" asp-for="IdCliente" />
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="NomeCliente" class="form-label">Nome do Cliente</label>
+                    <input asp-for="NomeCliente" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CPF" class="form-label">CPF</label>
+                    <input asp-for="CPF" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Telefone" class="form-label">Telefone</label>
+                    <input asp-for="Telefone" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email" class="form-label">E-mail</label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label asp-for="Endereco" class="form-label">Endereço</label>
+                    <input asp-for="Endereco" class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+                <button type="submit" class="btn-crud btn-salvar">💾 Salvar Alterações</button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,84 @@
+﻿@model IEnumerable<RestauranteCrud.Models.Fornecedor>
+
+@{
+    ViewData["Title"] = "Fornecedores";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold text-danger">Fornecedores</h1>
+            <p class="text-muted">Gerenciamento dos fornecedores</p>
+        </div>
+
+        <a asp-action="Create" class="btn btn-danger">
+            + Novo Fornecedor
+        </a>
+    </div>
+
+    <div class="card shadow-sm border-0">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-danger">
+                        <tr>
+                            <th>Nome</th>
+                            <th>CNPJ</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Endereço</th>
+                            <th class="text-center">Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td class="fw-semibold">
+                                    @item.NomeFornecedor
+                                </td>
+
+                                <td>
+                                    @item.CNPJ
+                                </td>
+
+                                <td>
+                                    @item.Telefone
+                                </td>
+
+                                <td>
+                                    @item.Email
+                                </td>
+
+                                <td>
+                                    @item.Endereco
+                                </td>
+
+                                <td class="text-center">
+                                    <a asp-action="Details"
+                                       asp-route-id="@item.IdFornecedor"
+                                       class="btn btn-sm btn-info text-white">
+                                        Detalhes
+                                    </a>
+
+                                    <a asp-action="Edit"
+                                       asp-route-id="@item.IdFornecedor"
+                                       class="btn btn-sm btn-warning">
+                                        Editar
+                                    </a>
+
+                                    <a asp-action="Delete"
+                                       asp-route-id="@item.IdFornecedor"
+                                       class="btn btn-sm btn-danger">
+                                        Excluir
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

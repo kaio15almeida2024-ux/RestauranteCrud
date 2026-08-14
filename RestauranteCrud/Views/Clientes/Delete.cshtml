@@ -1,0 +1,55 @@
+﻿@model RestauranteCrud.Models.Cliente
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1 class="delete-title">🗑️ Excluir Cliente</h1>
+            <p>Confirmação de exclusão</p>
+        </div>
+
+        <div class="delete-warning">
+            <strong>Atenção!</strong>
+            Você realmente deseja excluir este cliente?
+            Essa ação não poderá ser desfeita.
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span class="info-label">Nome:</span>
+                <span class="info-value">@Model.NomeCliente</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">CPF:</span>
+                <span class="info-value">@Model.CPF</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">E-mail:</span>
+                <span class="info-value">@Model.Email</span>
+            </div>
+
+        </div>
+
+        <form asp-action="Delete">
+
+            <input type="hidden" asp-for="IdCliente" />
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Cancelar</a>
+
+                <button type="submit" class="btn-crud btn-excluir">
+                    🗑️ Confirmar Exclusão
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

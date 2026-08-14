@@ -1,0 +1,54 @@
+﻿@model RestauranteCrud.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Excluir Funcionário";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1 class="delete-title">🗑️ Excluir Funcionário</h1>
+            <p>Confirmação de exclusão</p>
+        </div>
+
+        <div class="delete-warning">
+            <strong>Atenção!</strong>
+            Você realmente deseja excluir este funcionário?
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span class="info-label">Nome:</span>
+                <span class="info-value">@Model.NomeFuncionario</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Cargo:</span>
+                <span class="info-value">@Model.Cargo</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">CPF:</span>
+                <span class="info-value">@Model.CPF</span>
+            </div>
+
+        </div>
+
+        <form asp-action="Delete">
+
+            <input type="hidden" asp-for="IdFuncionario" />
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Cancelar</a>
+
+                <button type="submit" class="btn-crud btn-excluir">
+                    🗑️ Confirmar Exclusão
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>

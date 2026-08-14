@@ -1,0 +1,53 @@
+﻿@model RestauranteCrud.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Novo Fornecedor";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>🏢 Novo Fornecedor</h1>
+            <p>Cadastre um novo fornecedor</p>
+        </div>
+
+        <form asp-action="Create">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="NomeFornecedor" class="form-label">Nome do Fornecedor</label>
+                    <input asp-for="NomeFornecedor" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="CNPJ" class="form-label">CNPJ</label>
+                    <input asp-for="CNPJ" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Telefone" class="form-label">Telefone</label>
+                    <input asp-for="Telefone" class="form-control" />
+                </div>
+
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Email" class="form-label">E-mail</label>
+                    <input asp-for="Email" type="email" class="form-control" />
+                </div>
+
+                <div class="col-12 mb-3">
+                    <label asp-for="Endereco" class="form-label">Endereço</label>
+                    <input asp-for="Endereco" class="form-control" />
+                </div>
+
+            </div>
+
+            <div class="crud-buttons">
+                <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+                <button type="submit" class="btn-crud btn-salvar">💾 Cadastrar Fornecedor</button>
+            </div>
+
+        </form>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Restaurante</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/RestauranteCrud.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
+            <div class="container">
+
+                <!-- Logo / Nome -->
+                <a class="navbar-brand fw-bold text-warning"
+                   asp-area=""
+                   asp-controller="Home"
+                   asp-action="Index">
+                    🍽️ Restaurante
+                </a>
+
+                <!-- Botão mobile -->
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarPrincipal"
+                        aria-controls="navbarPrincipal"
+                        aria-expanded="false"
+                        aria-label="Abrir menu">
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Menu -->
+                <div class="collapse navbar-collapse" id="navbarPrincipal">
+
+                    <ul class="navbar-nav ms-auto">
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Home"
+                               asp-action="Index">
+                                🏠 Início
+                            </a>
+                        </li>
+
+                        <!-- Clientes -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Clientes"
+                               asp-action="Index">
+                                👥 Clientes
+                            </a>
+                        </li>
+
+                        <!-- Pratos -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Pratos"
+                               asp-action="Index">
+                                🍴 Pratos
+                            </a>
+                        </li>
+
+                        <!-- Funcionários -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Funcionarios"
+                               asp-action="Index">
+                                👨‍🍳 Funcionários
+                            </a>
+                        </li>
+
+                        <!-- Fornecedores -->
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               asp-area=""
+                               asp-controller="Fornecedors"
+                               asp-action="Index">
+                                📦 Fornecedores
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- CONTEÚDO -->
+    <main class="container mt-4 mb-5">
+        @RenderBody()
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="bg-dark text-light py-3 mt-auto">
+        <div class="container text-center">
+            <span>
+                &copy; 2026 - Restaurante CRUD
+            </span>
+        </div>
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

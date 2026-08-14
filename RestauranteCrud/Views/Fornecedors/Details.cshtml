@@ -1,0 +1,60 @@
+﻿@model RestauranteCrud.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Informações do Fornecedor";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>🏢 Informações do Fornecedor</h1>
+            <p>Dados cadastrados</p>
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span class="info-label">Código:</span>
+                <span class="info-value">@Model.IdFornecedor</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Nome:</span>
+                <span class="info-value">@Model.NomeFornecedor</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">CNPJ:</span>
+                <span class="info-value">@Model.CNPJ</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Telefone:</span>
+                <span class="info-value">@Model.Telefone</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">E-mail:</span>
+                <span class="info-value">@Model.Email</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Endereço:</span>
+                <span class="info-value">@Model.Endereco</span>
+            </div>
+
+        </div>
+
+        <div class="crud-buttons">
+            <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdFornecedor"
+               class="btn-crud btn-editar">
+                ✏️ Editar
+            </a>
+        </div>
+
+    </div>
+</div>

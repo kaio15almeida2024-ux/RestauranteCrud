@@ -1,0 +1,91 @@
+﻿@model RestauranteCrud.Models.Pratos
+
+@{
+    ViewData["Title"] = "Editar Prato";
+}
+
+<div class="crud-card">
+
+    <div class="crud-header">
+        <h1>✏️ Editar Prato</h1>
+        <p>Altere os dados do prato</p>
+    </div>
+
+    <form asp-action="Edit">
+
+        <input type="hidden" asp-for="IdPrato" />
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="NomePrato" class="form-label">
+                    Nome do Prato
+                </label>
+                <input asp-for="NomePrato" class="form-control" />
+                <span asp-validation-for="NomePrato" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Categoria" class="form-label">
+                    Categoria
+                </label>
+                <input asp-for="Categoria" class="form-control" />
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="Preco" class="form-label">
+                    Preço
+                </label>
+                <input asp-for="Preco"
+                       type="number"
+                       step="0.01"
+                       class="form-control" />
+                <span asp-validation-for="Preco" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <label asp-for="IdFornecedor" class="form-label">
+                    Fornecedor
+                </label>
+
+                <select asp-for="IdFornecedor"
+                        class="form-select"
+                        asp-items="ViewBag.IdFornecedor">
+                    <option value="">Selecione um fornecedor</option>
+                </select>
+            </div>
+
+            <div class="col-12 mb-3">
+                <label asp-for="Descricao" class="form-label">
+                    Descrição
+                </label>
+                <textarea asp-for="Descricao"
+                          class="form-control"
+                          rows="4"></textarea>
+            </div>
+
+        </div>
+
+        <div class="crud-buttons">
+
+            <a asp-action="Index" class="btn-crud btn-voltar">
+                ← Voltar
+            </a>
+
+            <button type="submit" class="btn-crud btn-salvar">
+                💾 Salvar Alterações
+            </button>
+
+        </div>
+
+    </form>
+
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

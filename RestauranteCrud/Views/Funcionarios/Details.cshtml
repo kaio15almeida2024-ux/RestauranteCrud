@@ -1,0 +1,65 @@
+﻿@model RestauranteCrud.Models.Funcionario
+
+@{
+    ViewData["Title"] = "Informações do Funcionário";
+}
+
+<div class="crud-container">
+    <div class="crud-card">
+
+        <div class="crud-title">
+            <h1>👨‍🍳 Informações do Funcionário</h1>
+            <p>Dados cadastrados</p>
+        </div>
+
+        <div class="info-list">
+
+            <div class="info-item">
+                <span class="info-label">Código:</span>
+                <span class="info-value">@Model.IdFuncionario</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Nome:</span>
+                <span class="info-value">@Model.NomeFuncionario</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">CPF:</span>
+                <span class="info-value">@Model.CPF</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Cargo:</span>
+                <span class="info-value">@Model.Cargo</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Telefone:</span>
+                <span class="info-value">@Model.Telefone</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Endereço:</span>
+                <span class="info-value">@Model.Endereco</span>
+            </div>
+
+            <div class="info-item">
+                <span class="info-label">Salário:</span>
+                <span class="info-value">R$ @Model.Salario.ToString("N2")</span>
+            </div>
+
+        </div>
+
+        <div class="crud-buttons">
+            <a asp-action="Index" class="btn-crud btn-voltar">← Voltar</a>
+
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdFuncionario"
+               class="btn-crud btn-editar">
+                ✏️ Editar
+            </a>
+        </div>
+
+    </div>
+</div>
